@@ -1,0 +1,4 @@
+trianglePackage/magicTriangle.java
+ trianglePackage.magicTriangle
+trianglePackage/App.java
+ trianglePackage.App
