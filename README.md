@@ -1,4 +1,4 @@
-#Project Software Engineering (Individual Assignment)
+# Project Software Engineering (Individual Assignment)
  Assignment week 3 for Project Software Engineering - Saxion University of Applied Sciences
  
  Write a Java program which is is able to determine the type of a triangle, based on the sides of a triangle. 
