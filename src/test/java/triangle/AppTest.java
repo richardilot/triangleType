@@ -1,10 +1,10 @@
-package trianglePackage;
+package triangle;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class AppTest {
-    magicTriangle triangle = new magicTriangle();
+    MagicTriangle triangle = new MagicTriangle();
 
     @Test public void testAppHasGreeting(){
         App classUnderTest = new App();
