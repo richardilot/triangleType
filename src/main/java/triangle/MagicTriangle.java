@@ -1,27 +1,44 @@
 package triangle;
 
+
 public class MagicTriangle {
-    //triangle based on sides
-    public String sidesBased(int a, int b, int c) {
-        if (a != b && a != c && b != c) //scalene: length of all sides are different
-            return "Scalene";
-        else if (a == b ^ a == c ^ b == c) //isosceles: length of two sides are equal
-            return "Isosceles";
-        else if (a == b && a == c && b == c) //equilateral: length of all sides are equal
-            return "Equilateral";
-        else
-            return "Triangle not recognized!";
+    private int a;
+    private int b;
+    private int c;
+
+    public MagicTriangle() {
+        this.a = 0;
+        this.b = 0;
+        this.c = 0;
     }
 
-    //triangles based on angles
-    public String anglesBased(int a, int b, int c) {
-        if (a < 90 && b < 90 && c < 90) //acute: each angle is less than 90 deg
-            return "Acute";
-        else if (a == 90 ^ b == 90 ^ c == 90) //right: one angle is 90 deg
-            return "Right";
-        else if (a > 90 ^ b > 90 ^ c > 90) //obtuse: one angle is more than 90 deg
-            return "Obtuse";
-        else
-            return "Triangle not recognized!";
+    public void setTriangle(int a, int b, int c) {
+        this.a = a;
+        this.b = b;
+        this.c = c;
+    }
+
+    public String sidesBased() {
+        if (a > 0 && b > 0 && c > 0) {
+            if (a == b && b == c && c == a)
+                return "Equilateral";
+            else if (a == b ^ b == c ^ c == a)
+                return "Isosceles";
+            else if (a != b && b != c && c != a)
+                return "Scalene";
+        } else return "Triangle not recognized!";
+        return null;
+    }
+
+    public String anglesBased() {
+        if ((a > 0 && a < 180) && (b > 0 && b < 180) && (c > 0 && c < 180)) {
+            if (this.a < 90 && this.b < 90 && this.c < 90)
+                return "Acute";
+            else if (a > 90 ^ b > 90 ^ c > 90)
+                return "Obtuse";
+            else if (a == 90 ^ b == 90 ^ c == 90)
+                return "Right";
+        } else return "Triangle not recognized!";
+        return null;
     }
 }

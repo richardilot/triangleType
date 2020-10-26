@@ -1,2 +1,2 @@
-trianglePackage/AppTest.java
- trianglePackage.AppTest
+triangle/AppTest.java
+ triangle.AppTest

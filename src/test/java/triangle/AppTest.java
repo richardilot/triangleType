@@ -10,39 +10,56 @@ public class AppTest {
         App classUnderTest = new App();
         assertNotNull("app should have a greeting", classUnderTest.getGreeting());
     }
-    @Test public void testScalene(){
-        String result = triangle.sidesBased(4, 5, 6);
-        assertSame(result.equals("Scalene"), result.equals("Scalene"));
+
+    @Test
+    public void testScalene() {
+        triangle.setTriangle(4, 5, 6);
+        String result = triangle.sidesBased();
+        //assertEquals or assertSame?
+        assertEquals("Scalene", result);
     }
 
-    @Test public void testIsosceles(){
-        String result = triangle.sidesBased(4,4,5);
-        assertSame(result.equals("Isosceles"), result.equals("Isosceles"));
+    @Test
+    public void testIsosceles() {
+        triangle.setTriangle(8, 8, 10);
+        String result = triangle.sidesBased();
+        assertEquals("Isosceles", result);
     }
 
-    @Test public void testEquilateral(){
-        String result = triangle.sidesBased(4,4,4);
-        assertSame(result.equals("Equilateral"), result.equals("Equilateral"));
+    @Test
+    public void testEquilateral() {
+        triangle.setTriangle(8, 8, 8);
+        String result = triangle.sidesBased();
+        assertEquals("Equilateral", result);
     }
 
-    @Test public void testAcute(){
-        String result = triangle.sidesBased(65, 85, 24);
-        assertSame(result.equals("Acute"), result.equals("Acute"));
+    @Test
+    public void testAcute() {
+        triangle.setTriangle(35, 45, 60);
+        String result = triangle.anglesBased();
+        assertEquals("Acute", result);
+
     }
 
-    @Test public void testRight(){
-        String result = triangle.sidesBased(25,90,30);
-        assertSame(result.equals("Right"), result.equals("Right"));
+    @Test
+    public void testRight() {
+        triangle.setTriangle(90, 80, 35);
+        String result = triangle.anglesBased();
+        assertEquals("Right", result);
     }
 
-    @Test public void testObtuse(){
-        String result = triangle.sidesBased(120,59,80);
-        assertSame(result.equals("Obtuse"), result.equals("Obtuse"));
+    @Test
+    public void testObtuse() {
+        triangle.setTriangle(120, 90, 80);
+        String result = triangle.anglesBased();
+        assertEquals("Obtuse", result);
     }
 
-    @Test public void testNotRecognizeAngle(){
-        String result = triangle.anglesBased(360, 160, 120);
-        assertSame(result.equals("Triangle not recognized!"), result.equals("Triangle not recognized!"));
+    @Test
+    public void testNotRecognizeAngle() {
+        triangle.setTriangle(-1, 1024, 34 * 34);
+        String result = triangle.anglesBased();
+        assertEquals("Triangle not recognized!", result);
     }
 
 }
