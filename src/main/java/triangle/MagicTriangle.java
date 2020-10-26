@@ -20,14 +20,13 @@ public class MagicTriangle {
 
     public String sidesBased() {
         if (a > 0 && b > 0 && c > 0) {
-            if (a == b && b == c && c == a)
+            if (a == b && b == c)
                 return "Equilateral";
             else if (a == b ^ b == c ^ c == a)
                 return "Isosceles";
-            else if (a != b && b != c && c != a)
+            else
                 return "Scalene";
         } else return "Triangle not recognized!";
-        return null;
     }
 
     public String anglesBased() {
